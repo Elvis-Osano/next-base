@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React, { ReactNode } from "react";
+import Link from "next/link";
+import Head from "next/head";
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = "home Page" }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -15,19 +15,22 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <nav>
+      <nav className="flex gap-4 capitalize text-red-600 font-sans font-bold bg-black w-full p-5 ">
         <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
+          <a className="hover:text-white">Home</a>
+        </Link>{" "}
+        |{" "}
         <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
+          <a className="hover:text-white">About</a>
+        </Link>{" "}
+        |{" "}
         <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
+          <a className="hover:text-white">Users List</a>
+        </Link>{" "}
+        |{" "}
+        <a href="/api/users" className="hover:text-white">
+          Users API
+        </a>
       </nav>
     </header>
     {children}
@@ -36,6 +39,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <span>I'm here to stay (Footer)</span>
     </footer>
   </div>
-)
+);
 
-export default Layout
+export default Layout;
