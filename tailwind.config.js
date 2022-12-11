@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         pacifico: "Pacifico",
-        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
+        
       },
     },
   },
